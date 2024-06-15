@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello future you!</h1>
+
+    {% if err_message %}
+        <H3>{{ err_message }}</H3>
+    {% endif %}
+
+
+    <form method="post" action="{{ url_for('register') }}">            
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+
+
+{% endblock %}

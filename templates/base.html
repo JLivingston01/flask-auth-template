@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal OAuth Flask Template</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<nav class='navbar'>
+    <a href="/">
+        Home
+    </a>
+    {% if logged_in %}
+        <a href="/logout">
+            Logout
+        </a>
+    {% else %} 
+        <a href="/register">
+            Register
+        </a>
+        <a href="/login">
+            Login
+        </a>
+    {% endif %}    
+</nav>
+<body>
+    <div class="content">
+        {% block content %} 
+        {% endblock %}
+    </div>
+</body>
+</html>
